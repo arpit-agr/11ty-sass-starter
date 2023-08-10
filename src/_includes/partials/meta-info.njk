@@ -1,7 +1,7 @@
 {% set siteTitle = site.name %}
 
 {%- if page.url == '/' -%}
-  {%- set pageTitle = title -%}
+  {%- set pageTitle = siteTitle -%}
 {%- else -%}
   {%- set pageTitle = title + ' | ' + site.name -%}
 {%- endif -%}
@@ -16,27 +16,23 @@
   {% set opengraphUrl = site.url + '/img/og/' + page.fileSlug + '.jpeg' %}
 {%- endif -%} -->
 
-<title>{{ pageTitle | title }}</title>
+<title>{{ pageTitle }}</title>
 <link rel="canonical" href="{{ canonicalLink }}">
 
-<meta property="og:site_name" content="{{ siteTitle | title }}">
-<meta property="og:title" content="{{ pageTitle | title }}">
+<meta property="og:site_name" content="{{ siteTitle }}">
+<meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ currentUrl }}">
 
-<!-- <meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="{{ opengraphUrl }}">
-<meta name="twitter:image" content="{{ opengraphUrl }}">
-<meta property="og:image:alt" content="Page image for {{ pageTitle }}">
-<meta name="twitter:image:alt" content="Page image for {{ pageTitle }}"> -->
+<!-- <meta property="og:image" content="{{ opengraphUrl }}">
+<meta property="og:image:alt" content="Page image for {{ pageTitle }}"> -->
 
-<meta name="description" content="{{ description | title }}">
-<meta name="twitter:description" content="{{ description | title }}">
-<meta property="og:description" content="{{ description | title }}">
+<meta name="description" content="{{ description }}">
+<meta property="og:description" content="{{ description }}">
 
 <!-- theme-color -->
-<meta name="theme-color" content="{{ site.themeColor }}">
-<meta name="color-scheme" content="{{ site.colorScheme }}">
+<meta name="theme-color" content="{{ theme.color }}">
+<meta name="color-scheme" content="{{ theme.colorScheme }}">
 
 <!-- favicon -->
 <!-- <link rel="icon" href="/favicon.ico" sizes="any">
@@ -47,5 +43,5 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚨</text></svg>">  
 {%- endif -%}
 
-<!-- ELEVENTY -->
+<!-- Eleventy -->
 <meta name="generator" content="{{ eleventy.generator }}">

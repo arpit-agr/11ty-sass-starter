@@ -1,6 +1,6 @@
 ---
 title: Hello World
-layout: "layouts/home.html"
+layout: "layouts/home.njk"
 ---
 
 # {{ title }}

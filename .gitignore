@@ -9,6 +9,7 @@ package-lock.json
 # Build artefacts
 /public
 .cache
+generated/
 
 # vscode
 .vscode
