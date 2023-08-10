@@ -1,4 +1,4 @@
-# 11TY-STARTER
+# 11TY-SASS-STARTER
 
 A starter repository to build a website with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
 
